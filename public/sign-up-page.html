@@ -134,16 +134,16 @@
   <body>
     <div class="main-block">
       <h1>Fitness Tracker</h1>
-      <form action="/">
+      <form>
        
         <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
+        <input type="text" name="email" id="email" placeholder="Email" required/>
         <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Name" required/>
+        <input type="text" name="fistName" id="firstName" placeholder="First Name" required/>
         <label id="icon" for="name"><i class="fas fa-user"></i></label>
-        <input type="text" name="name" id="name" placeholder="Last Name" required/>
+        <input type="text" name="lastName" id="lastName" placeholder="Last Name" required/>
         <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
+        <input type="password" name="password" id="password" placeholder="Password" required/>
         <hr>
         <div class="gender">
           <input type="radio" value="none" id="male" name="gender" checked/>
@@ -154,9 +154,11 @@
         <hr>
         <div class="btn-block">
 
-          <button type="submit" href="/">Sign up</button>
+          <button type="submit" class="submitBtn">Sign up</button>
         </div>
       </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/signUp.js"></script>
   </body>
 </html>
