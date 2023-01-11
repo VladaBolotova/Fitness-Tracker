@@ -134,19 +134,21 @@
   <body>
     <div class="main-block">
       <h1>Fitness Tracker</h1>
-      <form action="/">
+      <form>
        
         <label id="icon" for="name"><i class="fas fa-envelope"></i></label>
-        <input type="text" name="name" id="name" placeholder="Email" required/>
+        <input type="text" name="name" id="email" placeholder="Email" required/>
       
         <label id="icon" for="name"><i class="fas fa-unlock-alt"></i></label>
-        <input type="password" name="name" id="name" placeholder="Password" required/>
+        <input type="password" name="name" id="password" placeholder="Password" required/>
         
         <div class="btn-block">
 
-          <button type="submit" href="/">Log in</button>
+          <button type="submit" class="submitBtn">Log in</button>
         </div>
       </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./js/logIn.js"></script>
   </body>
 </html>
