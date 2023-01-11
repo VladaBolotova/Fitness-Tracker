@@ -1,0 +1,170 @@
+html{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./Assets/wp3018787.jpeg);
+    background-size: cover;
+    background-position: center;
+ 
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    
+}
+.class{
+    margin-right: 40px;
+}
+.hero{
+    color: white;
+    padding-top: 10%;
+    padding: 20px;
+    margin-right: 300px;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+nav{
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    padding-left: 5%;
+    width: 100%;
+    margin-right: 100px;
+}
+
+.aaa{
+    width: 100%;
+    
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-right: 50px;
+    font-size: 23px;
+    
+   
+
+  }
+  .aaa a{
+    margin-right: 60px;
+    color: white;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.main{
+    margin-left: 42%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    font-size: larger;
+}
+
+h2{
+    color:white;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.main h2 {
+    color: white;
+    margin-left: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#a{
+    margin-left: 93px;
+}
+#b{
+    margin-left:60px;
+}
+#c{
+    margin-right: 100px;
+}
+
+button{
+  background-color: lightblue;
+    margin-left: 50%;
+    font-size: 25px;
+    border-radius: 10px 10px 10px 10px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+.brands{
+    display: flex;
+    margin-top: 400px;
+    justify-content:space-around;
+}
+.brands a{
+    color: white;
+    text-decoration: none;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.about-us{
+    display: flex;
+    margin-top: 100px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    
+}
+.text h2{
+    font-family:fantasy;
+}
+.about-us img{
+    border-radius: 20px 20px 20px 20px;
+    height: 800px;
+    width: 800px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    filter: blur(5px);
+}
+.cont{
+    margin-left: 47%;
+    padding-bottom: 5%;
+    padding-top: 2%;
+    justify-content: space-evenly; 
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-family:fantasy;
+}
+
+.contact{
+    position: relative;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+
+}
+
+
+.contact i{
+    height: 50px;
+    width: 50px;
+    align-items:center;
+    justify-content: center;
+    background: rgb(55, 0, 255);
+    margin-left: 30%;
+    color:aliceblue;
+    text-decoration: none;
+    border-radius: 50%;
+    border-style: dashed;
+    justify-content: space-evenly;
+    display: inline-flex;
+    font-size: xx-large;
+
+   
+}
+footer{
+    background-color: black;
+}
+
