@@ -1,18 +1,40 @@
+const { Workout } = require('../models');
 
-const sequelize = require('../config/connection');
-const { Workouts } = require('../models');
+const workoutdata = [
+  {
+    type: '',
+    description: '',
+    reps: '',
+    set: '',
+    weight: '',
+    calories: '',
+  },
+  {
+    type: '',
+    description: '',
+    reps: '',
+    set: '',
+    weight: '',
+    calories: '',
+  },
+  {
+    type: '',
+    description: '',
+    reps: '',
+    set: '',
+    weight: '',
+    calories: '',
+  },
+  {
+    type: '',
+    description: '',
+    reps: '',
+    set: '',
+    weight: '',
+    calories: '',
+  },
+];
 
-const WorkoutData = require('./userData.json');
+const seedWorkout = () => Workout.bulkCreate(workoutdata);
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
-  await User.bulkCreate(userData, {
-    individualHooks: true,
-    returning: true,
-  });
-
-  process.exit(0);
-};
-
-seedDatabase();
+module.exports = seedUser;
