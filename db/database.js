@@ -11,7 +11,7 @@ app.get("/",function(req,res) {
   mssql.connect(config, function (err) {
     
     var request =new mssql.Request();
-    request.query("select * from user_info",
+    request.query("select * from fitness_db",
        function(err,info){
         if(err) console.log(err)
         res.send(info);
