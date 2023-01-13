@@ -3,7 +3,7 @@ const { Workout, Duration } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all workouts for homepage
-router.get('/',withAuth, async (req, res) => {
+router.get('/workout',withAuth, async (req, res) => {
   try {
     const dbWorkoutData = await Workout.findAll({
        user_id: req.session.user_id
@@ -70,6 +70,15 @@ router.get('/duration/:id', async (req, res) => {
       res.status(500).json(err);
     }
   }
+});
+
+router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('home');
 });
 
 router.get('/signup', (req, res) => {

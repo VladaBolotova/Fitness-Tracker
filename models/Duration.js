@@ -43,4 +43,4 @@ Duration.init(
   }
 );
 
-module.exports =Duration;
+module.exports = Duration;
