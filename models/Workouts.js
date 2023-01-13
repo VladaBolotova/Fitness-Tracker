@@ -21,27 +21,35 @@ Workout.init(
     reps: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+   
+      
       },
       weight: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+
+     
       },
-      set: {
+      sets: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+       
+      
       },
       calories: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true,
+      
+      
       },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: { 
+          model: 'user',
+          key: 'id',
+        }
+      }
+      
   },
   {
     sequelize,

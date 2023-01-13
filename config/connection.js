@@ -11,5 +11,5 @@ const sequelize = new Sequelize(
     port: 8889,
   }
 );
-
+// console.log(sequelize.authenticate())
 module.exports = sequelize;
