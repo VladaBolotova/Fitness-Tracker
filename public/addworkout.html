@@ -172,22 +172,20 @@
       </div>
       <div class="item">
         <p>Type of Workout</p>
-        <select id="typeWorkout" onchange="changeDropdown(this.value)">
+        <select id="typeWogrkout" name="typeWorkout" onclick="showTextbox()">
           <option value="">*Please select*</option>
           <option value="Strength">Strength</option>
           <option value="Cardio">Cardio</option>
         </select>
-              <div id="strenghtForm">
+              <div id="strenghtForm" style="visibility: hidden;">
                 <input type="text" name="code" placeholder="Description" />
                 <input type="text" name="code" placeholder="Equipment's weight" />
                 <input type="text" name="code" placeholder="Number of Sets" />
                 <input type="text" name="code" placeholder="Number of Reps" />
               </div>
-              <div id="CardioForm">
+              <div id="CardioForm" style="visibility: hidden;">
                 <input type="text" name="code" placeholder="Description" />
-                <input type="text" name="code" placeholder="Equipment's weight" />
-                <input type="text" name="code" placeholder="Number of Sets" />
-                <input type="text" name="code" placeholder="Number of Reps" />
+                <input type="text" name="code" placeholder="Calories Burned" />
               </div>
               
       <div class="btn-block">
@@ -195,3 +193,7 @@
       </div>
     </form>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./js/addWorkout.js"></script>
+  </body>
+  </html>
