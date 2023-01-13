@@ -37,6 +37,12 @@
     padding: 20px;
     background-color: black;
     }
+    .s-none{
+      display: none;
+    }
+    .c-none{
+      display: none;
+    }
     form {
     width:48%;
     height: 30%;
@@ -172,18 +178,18 @@
       </div>
       <div class="item">
         <p>Type of Workout</p>
-        <select id="typeWogrkout" name="typeWorkout" onclick="showTextbox()">
+        <select id="typeWorkout" name="typeWorkout" onchange="showTextbox(this)">
           <option value="">*Please select*</option>
           <option value="Strength">Strength</option>
           <option value="Cardio">Cardio</option>
         </select>
-              <div id="strenghtForm" style="visibility: hidden;">
-                <input type="text" name="code" placeholder="Description" />
-                <input type="text" name="code" placeholder="Equipment's weight" />
-                <input type="text" name="code" placeholder="Number of Sets" />
-                <input type="text" name="code" placeholder="Number of Reps" />
+              <div id="strenghtForm" class="s-none">
+                <input type="text"  placeholder="Description" />
+                <input type="text"  placeholder="Equipment's weight" />
+                <input type="text"  placeholder="Number of Sets" />
+                <input type="text"  placeholder="Number of Reps" />
               </div>
-              <div id="CardioForm" style="visibility: hidden;">
+              <div id="CardioForm" class="c-none">
                 <input type="text" name="code" placeholder="Description" />
                 <input type="text" name="code" placeholder="Calories Burned" />
               </div>
