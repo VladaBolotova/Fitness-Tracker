@@ -18,14 +18,21 @@ Duration.init(
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+     
       },
     workout_time: {
         type: DataTypes.FLOAT,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true,
+       
       },
+      workout_id: {
+        type: DataTypes.INTEGER,
+        references: { 
+          model: 'workout',
+          key: 'id',
+        }
+      }
   },
   {
     sequelize,
@@ -36,4 +43,4 @@ Duration.init(
   }
 );
 
-module.exports = Duration;
+module.exports =Duration;

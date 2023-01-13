@@ -1,40 +1,43 @@
-const { Workout } = require('../models');
+const { Workout } = require('../models/Workouts');
 
 const workoutdata = [
   {
-    type: '',
-    description: '',
+    type: 'cardio',
+    description: 'running',
     reps: '',
     set: '',
     weight: '',
-    calories: '',
+    calories: '200',
   },
   {
-    type: '',
-    description: '',
-    reps: '',
-    set: '',
-    weight: '',
-    calories: '',
+    type: 'strength',
+    description: 'back',
+    reps: '4',
+    set: '5',
+    weight: '30kg',
+    calories: '178',
   },
   {
-    type: '',
-    description: '',
+    type: 'cardio',
+    description: 'swimming',
     reps: '',
     set: '',
     weight: '',
-    calories: '',
+    calories: '300',
   },
   {
-    type: '',
-    description: '',
-    reps: '',
-    set: '',
-    weight: '',
-    calories: '',
+    type: 'strength',
+    description: 'leg press',
+    reps: '3',
+    set: '4',
+    weight: '70kg',
+    calories: '154',
   },
 ];
 
-const seedWorkout = () => Workout.bulkCreate(workoutdata);
+const seedWorkout = () => Workout.bulkCreate(workoutdata).then ((result) => {
+  console.log(result)
+}).catch ((err) => console.error(err))
 
-module.exports = seedUser;
+
+module.exports = seedWorkout;
