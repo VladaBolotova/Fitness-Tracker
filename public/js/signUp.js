@@ -1,16 +1,26 @@
-const signUp = $('.submitBtn');
 
-signUp.on('click', function() {
-    const email = $('#email').value;
-    const firstName = $('#firstName').value;
-    const lastName = $('#lastName').value;
-    const password = $('#password').value;
 
-    const user = {
-        'email': email,
-        'firstName': firstName,
-        'lasName': lastName,
-        'password': password
-    };
-    console.log(user);
-});
+
+const signupFormHandler = async (event) => {
+    event.preventDefault();
+  
+    const firstname = document.querySelector('#firstName').value.trim();
+    const lastname = document.querySelector('#lastName').value.trim()
+    const email = document.querySelector('#email').value.trim();
+    const password = document.querySelector('#password').value.trim();
+  
+    if (firstname && lastname && email && password) {
+      const response = await fetch('/api/users/', {
+        method: 'POST',
+        body: JSON.stringify({ username, email, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to sign up.');
+      }
+    }
+  };
+document.querySelector('#signup-form').addEventListener('submit', signupFormHandler); 
