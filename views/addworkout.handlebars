@@ -37,6 +37,12 @@
     padding: 20px;
     background-color: black;
     }
+    .s-none{
+      display: none;
+    }
+    .c-none{
+      display: none;
+    }
     form {
     width:48%;
     height: 30%;
@@ -79,7 +85,7 @@
     color: #0AA4AC;
     
     }
-    .item input:hover {
+    .item input {
     border: 1px solid transparent;
     box-shadow: 0 0 6px 0 #004d00;
     color:#004d00;
@@ -115,6 +121,12 @@
     .btn-block {
     margin-top: 10px;
     text-align: center;
+    }
+    .wk-btn{
+      margin-top: 30px;
+    }
+    .prog-btn{
+margin-top: 30px;
     }
     button {
     width: 150px;
@@ -161,8 +173,8 @@
       <div class="item">
         <div class="name-item">
           <div>
-            <label for="address">Duration of Workout<span></span></label>
-            <input id="address" type="text" name="address" required/>
+            <label for="duration-of-workout">Duration of Workout (Min) <span></span></label>
+            <input id="duration" type="text" name="Duration" required/>
           </div>
           <div>
             <label for="number">Phone Number</label>
@@ -172,13 +184,30 @@
       </div>
       <div class="item">
         <p>Type of Workout</p>
-        <select>
+        <select id="typeWorkout" name="typeWorkout" onchange="showTextbox(this)">
           <option value="">*Please select*</option>
           <option value="Strength">Strength</option>
           <option value="Cardio">Cardio</option>
         </select>
+              <div id="strengthForm" class="s-none">
+                <input id="desc" type="text" name="description" placeholder="Description" />
+                <input id="weight"type="text"  name="weight" placeholder="Equipment's weight" />
+                <input id="sets" type="text" name="sets"  placeholder="Number of Sets" />
+                <input id="reps"type="text"  name="reps" placeholder="Number of Reps" />
+              </div>
+              <div id="CardioForm" class="c-none">
+                <input id="desc_cardio" type="text" name="type cardio" placeholder="Description" />
+                <input id="cal"type="text" name="calories" placeholder="Calories Burned" />
+              </div>
+              
       <div class="btn-block">
-        <button type="save" href="/">Save</button>
+        <button id="save-btn" type="save" >Save</button>
       </div>
     </form>
+    <button class="wk-btn"type="submit" href="/">Workout History</button>
+    <button class="prog-btn"type="submit" href="/">Progress</button>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="./js/addWorkout.js"></script>
+  </body>
+  </html>
