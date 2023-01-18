@@ -20,19 +20,19 @@ Workout.init(
     },
     reps: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
    
       
       },
       weight: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
 
      
       },
       sets: {
         type: DataTypes.INTEGER,
-        allowNull: false,
+        allowNull: true,
        
       
       },

@@ -18,3 +18,5 @@ Duration.belongsTo(Workout, {
 Workout.hasMany(Duration, {
     foreignKey: 'workout_id',
 })
+
+module.exports = {Duration, User, Workout};

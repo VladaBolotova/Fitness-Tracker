@@ -1,5 +1,15 @@
 const { Workout } = require('../models');
+const sequelize = require('../config/connection');
 
+
+const seedAll = async () => {
+  await sequelize.sync({ force: false });
+  await seedWorkout();
+
+  process.exit(0);
+};
+
+seedAll();
 const workoutdata = [
   {
     type: 'cardio',
@@ -8,7 +18,7 @@ const workoutdata = [
     // set: '',
     // weight: '',
     calories: '200',
-    user_id: '1'
+    user_id: '7'
   },
   {
     type: 'strength',
@@ -17,7 +27,7 @@ const workoutdata = [
     set: '5',
     weight: '30',
     calories: '178',
-    user_id: '1'
+    user_id: '7'
   },
   {
     type: 'cardio',
@@ -26,7 +36,7 @@ const workoutdata = [
     // set: '',
     // weight: '',
     calories: '300',
-    user_id: '1'
+    user_id: '7'
   },
   {
     type: 'strength',
@@ -35,7 +45,7 @@ const workoutdata = [
     set: '4',
     weight: '70',
     calories: '154',
-    user_id: '1'
+    user_id: '7'
   },
 ];
 

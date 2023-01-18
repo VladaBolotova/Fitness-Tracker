@@ -1,10 +1,13 @@
 const router = require('express').Router();
-const { User } = require('../../models/Users');
+const {User, Workout } = require('../../models');
+
 
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
+      first_name: req.body.firstname,
+      last_name: req.body.lastname,
       email: req.body.email,
       password: req.body.password,
     });
@@ -20,6 +23,15 @@ router.post('/', async (req, res) => {
   }
 });
 
+// amount of time user spends (duration)
+router.get('/workout', async (req, res) => {
+  console.log(req.session);
+  const workoutHistory = await Workout.findAll({
+    where:{ user_id: req.session.user_id}
+  })
+res.json(workoutHistory);
+})
+
 // Login
 router.post('/login', async (req, res) => {
   try {
@@ -28,7 +40,7 @@ router.post('/login', async (req, res) => {
         email: req.body.email,
       },
     });
-
+console.log(dbUserData);
     if (!dbUserData) {
       res
         .status(400)
@@ -47,6 +59,7 @@ router.post('/login', async (req, res) => {
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
 
       res
         .status(200)
@@ -59,13 +72,13 @@ router.post('/login', async (req, res) => {
 });
 
 // Logout
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(204).redirect('/');
     });
   } else {
-    res.status(404).end();
+    res.status(404).redirect('/');
   }
 });
 
