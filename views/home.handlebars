@@ -5,7 +5,12 @@
                 <div class="aaa">
 
                     <a href="#about-us" class="nav-items">About us</a>
+                    {{#if login}}  
+                    <a href="/api/users/logout" class="nav-items">Log out</a>
+                    {{else}}
                     <a href="/login" class="nav-items">Log in</a>
+                    {{/if}}
+                 
                     <a href="#contact-us" class="nav-items">Contact Us</a>
 
                 </div>

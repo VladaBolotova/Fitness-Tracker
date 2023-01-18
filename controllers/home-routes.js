@@ -29,7 +29,7 @@ router.get('/workout/:id', async (req, res) => {
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the gallery
+    // If the user is logged in, allow them to view 
     try {
       const dbWorkoutData = await Workout.findOne({ user_id: req.session.user_id, id: req.params.id}, {
         include: [
@@ -73,13 +73,26 @@ router.get('/duration/:id', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  if (req.session.loggedIn) {
+  // if (req.session.loggedIn) {
+  //   res.redirect('/');
+  //   return;
+  // }
+
+  res.render('home', {
+    login: req.session.loggedIn
+  });
+});
+
+router.get('/diagram', (req,res) =>{
+   if (!req.session.loggedIn) {
     res.redirect('/');
     return;
   }
 
-  res.render('home');
-});
+  res.render('diagram', {
+    login: req.session.loggedIn
+  });
+})
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {

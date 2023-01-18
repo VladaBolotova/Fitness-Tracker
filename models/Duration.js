@@ -14,8 +14,8 @@ Duration.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    gym_atandance: {
-        type: DataTypes.INTEGER,
+    date: {
+        type: DataTypes.DATE,
         allowNull: false,
         primaryKey: true,
      
