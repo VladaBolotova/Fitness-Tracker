@@ -99,5 +99,13 @@ router.get('/login', (req, res) => {
   res.render('log-in');
 });
 
+router.get('/addWorkout', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('addworkout');
+});
 
 module.exports = router;
