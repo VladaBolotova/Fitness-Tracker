@@ -14,6 +14,10 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    workout: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -38,7 +42,6 @@ Workout.init(
       },
       calories: {
         type: DataTypes.INTEGER,
-        allowNull: false,
       
       
       },
