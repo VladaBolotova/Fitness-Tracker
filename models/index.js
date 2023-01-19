@@ -20,3 +20,4 @@ Workout.hasMany(Duration, {
 })
 
 module.exports = {Duration, User, Workout};
+

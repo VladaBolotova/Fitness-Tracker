@@ -2,6 +2,7 @@ const router = require('express').Router();
 const {User, Workout } = require('../../models');
 
 
+
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
@@ -9,10 +10,14 @@ router.post('/', async (req, res) => {
       first_name: req.body.firstname,
       last_name: req.body.lastname,
       email: req.body.email,
+      first_name: req.body.first_name,
+      last_name:req.body.last_name,
       password: req.body.password,
     });
 
     req.session.save(() => {
+      req.session.userId=dbUserData.id;
+      req.session.email=dbUserData.email;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
