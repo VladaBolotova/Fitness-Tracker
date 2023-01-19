@@ -83,6 +83,18 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/addworkout', (req,res) =>{
+  console.log(req.session)
+  if (!req.session.loggedIn) {
+   res.redirect('/');
+   return;
+ }
+
+ res.render('addworkout', {
+   login: req.session.loggedIn
+ });
+})
+
 router.get('/diagram', (req,res) =>{
    if (!req.session.loggedIn) {
     res.redirect('/');
