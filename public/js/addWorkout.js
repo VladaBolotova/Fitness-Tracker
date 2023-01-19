@@ -9,31 +9,82 @@ function showTextbox(answer){
     } else { document.getElementById("CardioForm").classList.remove('c-none')
     document.getElementById("strengthForm").classList.add('s-none')
 }}
+
+function addWorkout() {
+
+const date = document.getElementById('date').value;
+const workoutTime = document.getElementById('duration').value.trim();
+const type = document.getElementById('typeWorkout').value.trim();
+const description = document.getElementById('desc').value.trim();
+const calories = document.getElementById('cal').value.trim();
+const weight = document.getElementById('weight').value.trim();
+const sets = document.getElementById('sets').value.trim();
+const reps = document.getElementById('reps').value.trim();
+
+if (type === 'Strength') {
+    if (date && workoutTime && description && weight && sets && reps) {
+        const response = fetch('api/workout', {
+            method: 'POST',
+            body: JSON.stringify({ date, workoutTime, type, description, weight, sets, reps }),
+            headers: { 'Content-Type': 'application/json' },
+        });
     
-
-showTextbox();
-
-
-let workouts = [];
-        const addWorkout = (ev)=>{
-            ev.preventDefault();  //to stop the form submitting
-            let workout_deats = {
-                id: getElementById("date").value,
-                description: document.getElementById('desc').value,
-                weight: document.getElementById('weight').value,
-                sets: document.getElementById("sets").value,
-                reps:document.getElementById("reps").value,
-                calories:document.getElementById("cal").value,
-                Cardio:document.getElementById("desc_cardio").value,
-                duration: document.getElementById("duration").value
-            }
-            workouts.push(workout_deats);
-            console.log(workouts)
-            document.forms[0].reset();
-            localStorage.setItem('MyworkoutList', JSON.stringify(workouts) );
-
-            console.log(workouts)
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to add workout.');
         }
+    };
+} else if (type === 'Cardio') {
+    if (date && workoutTime && description && calories) {
+        const response = fetch('api/workout', {
+            method: 'POST',
+            body: JSON.stringify({ date, workoutTime, type, description, calories }),
+            headers: { 'Content-Type': 'application/json' },
+        });
+    
+        if (response.ok) {
+            document.location.replace('/');
+        } else {
+            alert('Failed to add workout.');
+        }
+    };
+};
+}
+
+
+// let workouts = [];
+//         const addWorkout = async (ev)=>{
+//             ev.preventDefault();  //to stop the form submitting
+//             let workout_deats = {
+//                 id: document.getElementById("date").value,
+//                 description: document.getElementById('desc').value,
+//                 weight: document.getElementById('weight').value,
+//                 sets: document.getElementById("sets").value,
+//                 reps:document.getElementById("reps").value,
+//                 calories:document.getElementById("cal").value,
+//                 Cardio:document.getElementById("desc_cardio").value,
+//                 duration: document.getElementById("duration").value
+//             }
+//             workouts.push(workout_deats);
+//             console.log(workouts)
+//             document.forms[0].reset();
+//             if (workouts) {
+//                 const response = await fetch('/addworkout', {
+//                   method: 'POST',
+//                   body: JSON.stringify({ workouts }),
+//                   headers: { 'Content-Type': 'application/json' },
+//                 });
+            
+//                 if (response.ok) {
+//                   document.location.replace('/');
+//                 } else {
+//                   alert('Failed to add workout.');
+//                 }
+//               }
+
+//             console.log(workouts)
+//         }
         document.addEventListener('DOMContentLoaded', ()=>{
             document.getElementById('save-btn').addEventListener('click', addWorkout);
         
