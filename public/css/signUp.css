@@ -4,6 +4,7 @@
       justify-content: center;
       height: 100%;
       background-color: black;
+      width: 100%;
       }
       body, div, h1, form, input, p { 
       padding: 0;

@@ -95,6 +95,18 @@ router.get('/addworkout', (req,res) =>{
  });
 })
 
+router.get('/userDashboard', (req,res) =>{
+  console.log(req.session)
+  if (!req.session.loggedIn) {
+   res.redirect('/');
+   return;
+ }
+
+ res.render('dashboard', {
+   login: req.session.loggedIn
+ });
+})
+
 router.get('/diagram', (req,res) =>{
    if (!req.session.loggedIn) {
     res.redirect('/');
@@ -108,7 +120,7 @@ router.get('/diagram', (req,res) =>{
 
 router.get('/signup', (req, res) => {
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
 
