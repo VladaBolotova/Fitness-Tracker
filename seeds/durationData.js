@@ -1,25 +1,25 @@
-const { Duration } = require('../models/Duration');
+const { Duration } = require('../models');
 
 const durationdata = [
   {
-    gymAttendance: 'yes',
-    date: 'Monday',
-    workoutTime: '180 min',
+    workout_id: 1,
+    date: '03/04/2022',
+    workout_time: '180',
   },
   {
-    gymAttendance: 'no',
-    date: 'Tuesday',
-    workoutTime: '0',
+    workout_id: 2,
+    date: '05/04/2022',
+    workout_time: '50',
   },
   {
-    gymAttendance: 'yes',
-    date: 'Wednesday',
-    workoutTime: '150 min',
+    workout_id: 3,
+    date: '04/08/2022',
+    workout_time: '150',
   },
   {
-    gymAttendance: 'yes',
-    date: 'Thursday',
-    workoutTime: '60 min',
+    workout_id: 4,
+    date: '12/11/2022',
+    workout_time: '60',
   },
 ];
 

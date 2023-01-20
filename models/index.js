@@ -19,4 +19,8 @@ Workout.hasMany(Duration, {
     foreignKey: 'workout_id',
 })
 
+<<<<<<< HEAD
 module.exports={Duration,User,Workout};
+=======
+module.exports = {Duration, User, Workout};
+>>>>>>> main
