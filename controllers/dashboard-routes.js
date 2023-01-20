@@ -7,3 +7,5 @@ res.render("dashboard",{
     layout:"main"
 })
 })
+
+module.exports = router;
