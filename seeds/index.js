@@ -6,11 +6,11 @@ const seedUsers = require('./userData')
 const seedAll = async () => {
   await sequelize.sync({ force: false });
   
-  await seedUsers();
+  // await seedUsers();
 
   await seedWorkout();
 
-  await seedDuration();
+  // await seedDuration();
 
  
 

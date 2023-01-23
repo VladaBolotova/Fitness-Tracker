@@ -38,6 +38,7 @@ res.json(workoutHistory);
 
 // Login
 router.post('/login', async (req, res) => {
+  console.log('auto')
   try {
     const dbUserData = await User.findOne({
       where: {

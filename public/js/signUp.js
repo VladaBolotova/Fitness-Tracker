@@ -18,7 +18,7 @@ const signupFormHandler = async (event) => {
       console.log(response)
       if (response.ok) {
         document.location.replace('/login');
-        console.log('Rgister success')
+        console.log('Register success')
       } else {
         alert('Failed to sign up.');
       }

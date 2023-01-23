@@ -9,7 +9,7 @@ const userdata = [
   },
   {
     email: 'alex56152@gmail.com',
-    first_name: 'Alex',
+    ffirst_namee: 'Alex',
     last_name: 'Simmons',
     password: '830eBNb!',
   },
@@ -22,7 +22,7 @@ const userdata = [
   {
     email: 'marvina54@gmail.com',
     first_name: 'Marvina',
-    last_name: 'Woodward',
+    lastame: 'Woodward',
     password: '5B29Ilo*',
   },
 ];

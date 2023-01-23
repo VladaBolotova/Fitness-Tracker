@@ -85,6 +85,10 @@ h2{
     margin-right: 100px;
 }
 
+#b1 a{
+    text-decoration: none;
+}
+
 button{
   background-color: lightblue;
     margin-left: 50%;
