@@ -3,22 +3,26 @@ const { Workout, Duration } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET all workouts for homepage
-router.get('/workout',withAuth, async (req, res) => {
+router.get('/workout', async (req, res) => {
   try {
-    const dbWorkoutData = await Workout.findAll({
-       user_id: req.session.user_id
+    // Get all projects and JOIN with user data
+    const workoutData = await Workout.findAll({
+      include: [
+        {
+          model: Duration,
+        },
+      ],
     });
 
-    const workout = dbWorkoutData.map((workout) =>
-    workout.get({ plain: true })
-    );
+    // Serialize data so the template can read it
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
-    res.render('workoutHistory', {
-        workout,
-      loggedIn: req.session.loggedIn,
+    // Pass serialized data and session flag into template
+    res.render('workoutHistory', { 
+      workouts, 
+      logged_in: req.session.logged_in 
     });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
@@ -95,17 +99,29 @@ router.get('/addworkout', (req,res) =>{
  });
 })
 
-router.get('/userDashboard', (req,res) =>{
-  console.log(req.session)
-  if (!req.session.loggedIn) {
-   res.redirect('/');
-   return;
- }
+router.get('/dashboard', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const workoutData = await Workout.findAll({
+      include: [
+        {
+          model: Duration,
+        },
+      ],
+    });
+    console.log(workoutData)
+    // Serialize data so the template can read it
+    const workouts = workoutData.map((workout) => workout.get({ plain: true }));
 
- res.render('dashboard', {
-   login: req.session.loggedIn
- });
-})
+    // Pass serialized data and session flag into template
+    res.render('dashboard', { 
+      workouts, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get('/diagram', (req,res) =>{
    if (!req.session.loggedIn) {
