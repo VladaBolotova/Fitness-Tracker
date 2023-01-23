@@ -1,18 +1,35 @@
-console.log('test');
 
-var trace1 = {
-    x: [1, 2, 3, 4],
-    y: [10, 15, 13, 17],
-    type: 'scatter'
-  };
+  console.log('test');
+
+  fetch("/api/users/diagram-data")
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data)
   
-  var trace2 = {
-    x: [1, 2, 3, 4],
-    y: [16, 5, 11, 9],
-    type: 'scatter'
-  };
+      let x = data.map((w) => new Date(w.durations[0].date)).map((rawDate)=>`${rawDate.getMonth()}/${rawDate.getDay()}`)
+      let y = data.map((w) => +w.calories)
   
-  var data = [trace1, trace2];
+      console.log(x,y);
   
-  Plotly.newPlot('user-diagram', data);
+      var trace1 = {
+        x: x,
+        y: y,
+        type: 'bar',
+        name: 'workout'
+      };
+      
+      var data = [trace1];
+      var layout = {
+        title: "Testo",
+        xaxis: {
+          title: "Date"
+        },
+        yaxis: {
+          title: "Calories"
+        }
+      }
   
+      var responsive = {responsive: true}
+  
+      Plotly.newPlot('user-diagram', data, layout, responsive);
+    })
