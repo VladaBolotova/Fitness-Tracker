@@ -36,7 +36,7 @@ function addWorkout() {
             if (response.ok) {
                 document.location.replace('/');
             } else {
-                alert('Workout sucessfully added!.');
+                alert('Workout successfully added!.');
             }
         };
     } else if (type === 'Cardio') {
