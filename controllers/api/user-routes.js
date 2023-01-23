@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const {User, Workout } = require('../../models');
+//!!!!!!!!!!!!!!! ADDED DURATION
+const {User, Workout, Duration } = require('../../models');
 
 
 
@@ -29,13 +30,16 @@ router.post('/', async (req, res) => {
   }
 });
 
-// amount of time user spends (duration)
-router.get('/workout', async (req, res) => {
-  console.log(req.session);
+// !!!!!!!!!!!!!!!!!!! THIS IS SUPER BASIC
+router.get('/diagram-data', async (req, res) => {
+  
+
   const workoutHistory = await Workout.findAll({
-    where:{ user_id: req.session.user_id}
+    where:{ user_id: req.session.userId},
+    include: [Duration]
   })
-res.json(workoutHistory);
+  
+  res.json(workoutHistory);
 })
 
 // Login

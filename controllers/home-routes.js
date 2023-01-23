@@ -73,10 +73,10 @@ router.get('/duration/:id', async (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
   res.render('home', {
     login: req.session.loggedIn
