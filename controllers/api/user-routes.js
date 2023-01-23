@@ -8,8 +8,6 @@ const {User, Workout, Duration } = require('../../models');
 router.post('/', async (req, res) => {
   try {
     const dbUserData = await User.create({
-      first_name: req.body.firstname,
-      last_name: req.body.lastname,
       email: req.body.email,
       first_name: req.body.first_name,
       last_name:req.body.last_name,

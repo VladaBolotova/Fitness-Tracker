@@ -14,29 +14,33 @@ Workout.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    workout: {
+    date: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    workout_time: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    type: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     reps: {
         type: DataTypes.INTEGER,
-        allowNull: true,
    
       
       },
       weight: {
         type: DataTypes.INTEGER,
-        allowNull: true,
 
      
       },
       sets: {
         type: DataTypes.INTEGER,
-        allowNull: true,
        
       
       },
