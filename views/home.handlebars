@@ -1,17 +1,21 @@
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/style.css">
+
 <div class="class">
     <nav>
         <h2 class="hero">Fitness Tracker</h2>
         <ul>
             <div class="aaa">
-
                 <a href="#about-us" class="nav-items">About us</a>
+                <a href="#contact-us" class="nav-items">Contact Us</a>
                 {{#if login}}
+                <a href="/dashboard" class="nav-items">Dashboard</a>
+                <a href="#contact-us" class="nav-items">Contact Us</a>
                 <a href="/api/users/logout" class="nav-items">Log out</a>
                 {{else}}
                 <a href="/login" class="nav-items">Log in</a>
                 {{/if}}
-
-                <a href="#contact-us" class="nav-items">Contact Us</a>
 
             </div>
         </ul>
