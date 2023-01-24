@@ -7,6 +7,7 @@ router.get('/workout', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const workoutData = await Workout.findAll({
+      where: { user_id: req.session.userId},
       include: [
         {
           model: Duration,
@@ -103,6 +104,7 @@ router.get('/dashboard', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const workoutData = await Workout.findAll({
+      where: {user_id: req.session.userId},
       include: [
         {
           model: Duration,
@@ -116,7 +118,7 @@ router.get('/dashboard', async (req, res) => {
     // Pass serialized data and session flag into template
     res.render('dashboard', { 
       workouts, 
-      logged_in: req.session.logged_in 
+      logged_in: req.session.loggedIn 
     });
   } catch (err) {
     res.status(500).json(err);

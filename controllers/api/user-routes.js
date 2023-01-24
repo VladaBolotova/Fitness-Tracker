@@ -27,6 +27,16 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.get('/diagram-data', async (req, res) => {
+  
+
+  const workoutHistory = await Workout.findAll({
+    where:{ user_id: req.session.userId},
+  })
+  
+  res.json(workoutHistory);
+})
+
 // amount of time user spends (duration)
 router.get('/workout', async (req, res) => {
   console.log(req.session);
